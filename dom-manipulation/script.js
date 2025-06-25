@@ -194,16 +194,15 @@ async function postQuoteToServer(quote) {
 // Function to sync quotes with the server and handle conflicts
 async function syncQuotes() {
   try {
-    await fetchQuotesFromServer(); // Fetch new data from the server
-    // Implement conflict resolution logic here (e.g., compare timestamps)
-    // Example conflict resolution (simple version):
-    const serverQuotes = quotes; // This should come from the server response
+    await fetchQuotesFromServer(); 
+    const serverQuotes = quotes; 
     const localQuotes = JSON.parse(localStorage.getItem('quotes')) || [];
     
     // Simple conflict resolution: Server data overwrites local data
     if (serverQuotes.length > 0) {
       localStorage.setItem('quotes', JSON.stringify(serverQuotes));
       quotes = serverQuotes;
+      alert("Quotes synced with server!")
       populateCategoryFilter();
       filterQuotes();
     }
