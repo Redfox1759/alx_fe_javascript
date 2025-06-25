@@ -121,12 +121,12 @@ function populateCategories() {
         const option = new Option(category, category);
         categoryFilter.add(option);
     });
-    categoryFilter.value = filteredCategory;
+    categoryFilter.value = selectedCategory;
 }
 
 // Function to filter quotes based on selected category
 window.filterQuotes = function() {
-    filteredCategory = categoryFilter.value;
-    localStorage.setItem('filteredCategory', filteredCategory);
+    selectedCategory = categoryFilter.value;
+    localStorage.setItem('filteredCategory', selectedCategory);
     showRandomQuote();
 }
