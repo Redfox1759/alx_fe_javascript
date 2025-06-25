@@ -114,3 +114,19 @@ function exportToJsonFile() {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+function populateCategories() {
+    const categories = [...new Set(quotes.map(quote => quote.category))];
+    categories.forEach(category => {
+        const option = new Option(category, category);
+        categoryFilter.add(option);
+    });
+    categoryFilter.value = filteredCategory;
+}
+
+
+window.filterQuotes = function() {
+    filteredCategory = categoryFilter.value;
+    localStorage.setItem('filteredCategory', filteredCategory);
+    showRandomQuote();
+}
