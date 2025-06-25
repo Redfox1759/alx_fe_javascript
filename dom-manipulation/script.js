@@ -124,7 +124,7 @@ function populateCategories() {
     categoryFilter.value = filteredCategory;
 }
 
-
+// Function to filter quotes based on selected category
 window.filterQuotes = function() {
     filteredCategory = categoryFilter.value;
     localStorage.setItem('filteredCategory', filteredCategory);
