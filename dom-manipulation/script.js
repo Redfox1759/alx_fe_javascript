@@ -84,3 +84,11 @@ function addQuote(){
 function saveQuotes() {
   localStorage.setItem('quotes', JSON.stringify(quotes));
 }
+
+const savedQuotes = JSON.parse(localStorage.getItem('quotes'));
+if (savedQuotes) {
+    quotes.push(...savedQuotes);
+}
+
+
+showRandomQuote();
