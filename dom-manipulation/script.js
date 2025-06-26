@@ -221,3 +221,4 @@ document.addEventListener('DOMContentLoaded', () => {
   loadLastViewedQuote();
   document.getElementById('newQuote').addEventListener('click', showRandomQuote);
 });
+
